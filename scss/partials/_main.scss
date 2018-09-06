@@ -1,6 +1,206 @@
-body{
+body {
   background-color: red;
-  @include phone{
+
+  @include phone {
     background-color: yellow;
-  };
+  }
+}
+a:link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: $logo;
+  font-family: 'Raleway-Bold', Arial, sans-serif;
+}
+
+header {
+  background-color: $my-black;
+  color: white;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 1rem;
+
+  @include phone {
+    font-size: 1.5rem;
+  }
+}
+
+nav {
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  @include phone {
+    display: block;
+    position: fixed;
+    top: -12rem;
+    right: 0;
+    transition: 1s;
+  }
+  
+}
+
+#menu>li {
+  background-color: $my-black;
+  display: inline-block;
+
+  @include phone {
+    display: block;
+  
+  }
+
+  padding: 1rem;
+  font-size: 1rem;
+  height: 3rem;
+  width: 120px;
+ 
+  text-align: center;
+
+  &:hover {
+    font-family: 'Raleway-Bold', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+  }
+
+  
+ //dropdown menu
+  ul {
+    display: none;
+    background-color: $my-black;
+    position: absolute;
+    list-style-type: none;
+    font-family: 'Raleway', Arial, sans-serif;
+    width: 7.5rem;
+    
+    left: 0;
+    top: 4rem;
+    @include phone{
+      left: -7.5rem;
+      top: 0;
+      height: 9rem;
+
+    }
+
+    li {
+      padding: 0.75rem 0;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:before {
+      display: block;
+      content: "";
+      width: 7.5rem;
+      height: 1rem;
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      z-index: 1;
+      background-color: transparent;
+    }
+
+    &:after {
+      
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      z-index: 2;
+      border-left: 1rem solid transparent;
+      border-right: 1rem solid transparent;
+      border-bottom: 1rem solid $my-black;
+      background-color: transparent;
+      position: absolute;
+      top: -1rem;
+      left: 2.75rem;
+    }
+
+    li:hover {
+      font-family: 'Raleway-Bold', Arial, sans-serif;
+    }
+  }
+  &:first-child:hover {
+    position: relative;
+
+    &>ul {
+      display: block;
+
+      @include phone {
+        z-index: 3;
+      }
+    }
+  }
+}
+
+//hamburger menu
+#hamburger {
+  width: 33px;
+  height: 22px;
+  margin-right: 22px;
+  display: none;
+  position: absolute;
+  right: 0;
+
+  @include phone {
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  span {
+    display: block;
+    border-radius: 2px;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: $logo;
+    transition: 1s;
+  }
+}
+
+.hamburger-active {
+  span:nth-last-of-type(1) {
+    transform: rotate(45deg) translate(-3px, -10px);
+    transition: 1s;
+  }
+
+  span:nth-last-of-type(3) {
+    transform: rotate(-45deg) translate(-3px, 10px);
+    transition: 1s;
+  }
+
+  span:nth-last-of-type(2) {
+    opacity: 0;
+  }
+}
+
+.center-menu {
+  
+  @include phone {
+    
+   
+    display:block!important;
+    width: 120px;
+    // height: 10vh;
+        
+    top: 3rem!important;
+    right: 0!important;
+    
+    
+    z-index: -1;
+    transition: 1s;
+  }
+
 }

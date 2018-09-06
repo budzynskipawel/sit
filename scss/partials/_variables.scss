@@ -1,7 +1,26 @@
 //media queries
-
 $phone:"(max-width: 719px)";
 $phone-landscape: "(max-width: 719px) and (orientation: landscape)";
 $tablet:"(min-width: 720px) and(max-width: 1024px)";
 $desktop: "(min-width: 1025px) and (max-width: 1800px)";
 $large:"(min-width: 1801px)";
+//colors:
+$my-yellow: #ffc600;
+$my-black: #272727;
+$logo: #25CAA2;
+
+//fonts:
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url(../fonts/Raleway-Light.ttf);
+}
