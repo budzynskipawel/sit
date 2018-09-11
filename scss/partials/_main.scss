@@ -1,6 +1,8 @@
 body {
   background-color: red;
-
+@include tablet{
+  background-color:blue;
+}
   @include phone {
     background-color: yellow;
   }
@@ -11,7 +13,7 @@ a:link{
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -204,3 +206,93 @@ nav {
   }
 
 }
+
+.gallery{
+  
+  background-image: linear-gradient(white, #f7f7f7, #a7a7a7);
+  
+  .container{
+    position: relative;
+    border: 12px solid blue;
+   
+  }
+  [class^="arrow"] {
+  
+  display: block;
+  position: absolute;
+  top: 50%;
+   font-family: 'Raleway';
+  color: $logo;
+  font-size: 5rem;
+    &:hover{
+      cursor: pointer;
+    }
+
+  &[class$=left]{
+    content: "\3c";
+    
+    transform: translateY(-50%);
+    
+    left: 0;
+    
+  }
+  &[class$=right]{
+   right: 0;
+   content: "\3e";
+   transform: translateY(-50%);
+  }
+}
+  
+[class^="chair-"]{
+  display: flex;
+  flex-wrap: wrap;
+  
+  
+  &[class$="1"]{
+    transform: rotateY(120deg);
+  }
+  &[class$="2"]{
+    transform: rotateY(0);
+    // transform: translateY(-100%);
+  }
+  &[class$="3"]{
+    transform: rotateY(-120deg);
+  }
+}
+
+.chair{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  @include phone{
+    width: 100%
+  }
+  @include phone-landscape{
+    width:45%;
+  }
+  height: auto;
+  border:1px solid #666;
+  
+  img{
+    
+    max-width:100%;
+    height: auto;
+  }
+}
+.desc{
+  width:55%;
+  @include phone{
+    width: 100%
+  }
+  @include phone-landscape{
+    width:55%;
+  }
+  
+  border:1px solid #666;
+}
+  }
+  
+  
+
+
