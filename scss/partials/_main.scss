@@ -1,19 +1,27 @@
 body {
+  
+    min-width: 360px;
+    min-height: 360px;
+  
+  
   background-color: red;
-@include tablet{
-  background-color:blue;
-}
+
+  @include tablet {
+    background-color: blue;
+  }
+
   @include phone {
     background-color: yellow;
   }
 }
-a:link{
+
+a:link {
   text-decoration: none;
   color: inherit;
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
@@ -23,11 +31,12 @@ a:link{
 }
 
 header {
+  
   background-color: $my-black;
   color: white;
   font-family: 'Raleway', Arial, sans-serif;
   font-size: 1rem;
-
+  z-index: 999!important;
   @include phone {
     font-size: 1.5rem;
   }
@@ -47,8 +56,10 @@ nav {
     top: -12rem;
     right: 0;
     transition: 1s;
+   z-index: 99;
+    
   }
-  
+
 }
 
 #menu>li {
@@ -57,14 +68,14 @@ nav {
 
   @include phone {
     display: block;
-  
+    
   }
 
   padding: 1rem;
   font-size: 1rem;
   height: 3rem;
   width: 120px;
- 
+
   text-align: center;
 
   &:hover {
@@ -72,8 +83,8 @@ nav {
     cursor: pointer;
   }
 
-  
- //dropdown menu
+
+  //dropdown menu
   ul {
     display: none;
     background-color: $my-black;
@@ -81,10 +92,11 @@ nav {
     list-style-type: none;
     font-family: 'Raleway', Arial, sans-serif;
     width: 7.5rem;
-    
+    z-index: 99;
     left: 0;
-    top: 4rem;
-    @include phone{
+    top: 3.5rem;
+
+    @include phone {
       left: -7.5rem;
       top: 0;
       height: 9rem;
@@ -93,7 +105,12 @@ nav {
 
     li {
       padding: 0.75rem 0;
-      height: 3rem;
+      height: 1.875rem;
+
+      @include phone {
+        height: 3rem;
+      }
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -103,43 +120,42 @@ nav {
       display: block;
       content: "";
       width: 7.5rem;
-      height: 1rem;
+      height: 0.5rem;
       position: absolute;
-      top: -1rem;
+      top: -0.5rem;
       left: 0;
       z-index: 1;
       background-color: transparent;
     }
 
     &:after {
-      
+
       content: "";
       display: block;
       width: 0;
       height: 0;
       z-index: 2;
-      border-left: 1rem solid transparent;
-      border-right: 1rem solid transparent;
-      border-bottom: 1rem solid $my-black;
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid $my-black;
       background-color: transparent;
       position: absolute;
-      top: -1rem;
-      left: 2.75rem;
+      top: -0.5rem;
+      left: 3.25rem;
     }
 
     li:hover {
       font-family: 'Raleway-Bold', Arial, sans-serif;
     }
   }
+
   &:first-child:hover {
     position: relative;
 
     &>ul {
       display: block;
 
-      @include phone {
-        z-index: 3;
-      }
+
     }
   }
 }
@@ -152,7 +168,9 @@ nav {
   display: none;
   position: absolute;
   right: 0;
-
+ 
+    z-index: 999;
+  
   @include phone {
     display: block;
   }
@@ -189,110 +207,207 @@ nav {
 }
 
 .center-menu {
-  
+
   @include phone {
-    
-   
-    display:block!important;
+
+
+    display: block !important;
     width: 120px;
-    // height: 10vh;
-        
-    top: 3rem!important;
-    right: 0!important;
+
+
+    top: 3rem !important;
+    right: 0 !important;
+
     
-    
-    z-index: -1;
+
     transition: 1s;
   }
 
 }
 
-.gallery{
-  
-  background-image: linear-gradient(white, #f7f7f7, #a7a7a7);
-  
-  .container{
+.gallery {
+
+  background-image: linear-gradient(white,#D0D0D8);
+
+  .container {
     position: relative;
-    border: 12px solid blue;
    
+    
+
+
   }
+
   [class^="arrow"] {
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-family: 'Raleway-Bo';
+    
   
-  display: block;
-  position: absolute;
-  top: 50%;
-   font-family: 'Raleway';
-  color: $logo;
-  font-size: 5rem;
-    &:hover{
-      cursor: pointer;
+    color: $logo;
+    font-size: 2.5rem;
+    @include phone{
+      font-size: 1.5rem;
+    }
+    z-index: 99;
+
+    
+
+    &:hover {
+      cursor: pointer !important;
     }
 
-  &[class$=left]{
-    content: "\3c";
-    
-    transform: translateY(-50%);
-    
-    left: 0;
-    
-  }
-  &[class$=right]{
-   right: 0;
-   content: "\3e";
-   transform: translateY(-50%);
-  }
-}
-  
-[class^="chair-"]{
-  display: flex;
-  flex-wrap: wrap;
-  
-  
-  &[class$="1"]{
-    transform: rotateY(120deg);
-  }
-  &[class$="2"]{
-    transform: rotateY(0);
-    // transform: translateY(-100%);
-  }
-  &[class$="3"]{
-    transform: rotateY(-120deg);
-  }
-}
+    &[class$=left] {
+      content: "\3c";
 
-.chair{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45%;
-  @include phone{
-    width: 100%
+      transform: translateY(-50%);
+
+      left: 0;
+
+    }
+
+    &[class$=right] {
+      right: 0;
+      content: "\3e";
+      transform: translateY(-50%);
+    }
   }
-  @include phone-landscape{
-    width:45%;
-  }
-  height: auto;
-  border:1px solid #666;
-  
-  img{
+
+  [class^="chair-"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
-    max-width:100%;
+    
+   
+@include desktop{
+  min-height: 360px;
+
+}
+@include large{
+  min-height: 360px;
+  
+}
+    &[class$="1"] {
+     
+    }
+
+    &[class$="2"] {
+      transform: rotateY(0);
+      // transform: translateY(-100%);
+       display: none;
+    }
+
+    &[class$="3"] {
+      display: none;
+    }
+  }
+
+  .chair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    margin: 3rem 0 0 0;
+  
+
+    @include phone {
+      width: 100%;
+      justify-content: center;
+     margin: 0;
+    }
+
+    @include phone-landscape {
+      width: 35%;
+    }
+    @include tablet{
+      
+    }
+
     height: auto;
+    border:1px solid #666;
+
+    img {
+
+      max-width: 100%;
+      height: auto;
+      
+    }
   }
-}
-.desc{
-  width:55%;
-  @include phone{
-    width: 100%
-  }
-  @include phone-landscape{
-    width:55%;
-  }
-  
-  border:1px solid #666;
-}
-  }
-  
+
+  .desc {
+    width: 35%;
+    margin: 3rem 0 0 0;
   
 
+    @include phone {
+      width: 100%;
+      margin: 0;
+      
+    }
+    
 
+    @include phone-landscape {
+      width: 55%;
+    }
+
+    font-family: 'Raleway',
+    Arial,
+    sans-serif;
+    border:1px solid #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h1 {
+      padding: 1rem 0 1rem 0;
+      text-align: center;
+      @include phone {
+        padding: 1rem 0;
+        font-size: 1.875rem;
+      }
+      @include tablet{
+        font-size: 1.75rem;
+      }
+
+      font-size: 2rem;
+
+    }
+
+    p {
+
+      font-size: 1rem;
+
+      @include phone {
+        font-size: 0.875rem;
+        width: 100%;
+        padding: 0 2rem;
+      }
+
+     
+      width: 100%;
+     
+      @include tablet{
+        width: 100%;
+        padding: 0 2rem;
+      }
+      text-align: center;
+      line-height: 150%;
+    }
+
+    button {
+      font-family: 'Raleway', Arial, sans-serif;
+      background-color: $logo;
+      color: white;
+      font-size: 1rem;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin: 1rem;
+    }
+  }
+}
