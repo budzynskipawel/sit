@@ -15,9 +15,33 @@ hamburger.addEventListener("click", function onClick(event) {
   $left.on('click', backGal);
   $right.on('click', forwardGal);
 
+
   $items = $('[class^=chair-]');
 
+  $items.on('touchmove', forwardGal);
+  $circles = $('.circles div');
+  $circles.on('click', clickCircle);
+  setInterval(forwardGal, 8000);
   $visible = 0;
+
+  function changeItem(a){
+    $items.css('opacity', '0');
+    $($items[$visible]).css('opacity','1');
+  };
+
+  function changeCircle(a){
+    $circles.css('background-color', 'lightgray');
+    $($circles[$visible]).css('background-color', 'gray');
+    
+    
+  };
+
+  function clickCircle(e){
+$visible = ($(this).data('circle'));
+changeItem($visible);
+   changeCircle($visible);
+  };
+
   function backGal(){
     if($visible !==0){
       $visible--;
@@ -25,10 +49,9 @@ hamburger.addEventListener("click", function onClick(event) {
       $visible = $items.length - 1;
     }
     
-    console.log('left');
-    $items.css('opacity', '0');
+   changeItem($visible);
+   changeCircle($visible);
     
-    $($items[$visible]).css('opacity','1');
     
     
   };
@@ -39,12 +62,9 @@ hamburger.addEventListener("click", function onClick(event) {
       $visible = 0;
     }
     
-    console.log('right');
-    console.log($visible);
-    $items.css('opacity', '0');
-    
-    $($items[$visible]).css('opacity','1');
+    changeItem($visible);
+   changeCircle($visible);
   }
-
-  // setInterval(forwardGal, 8000);
+  
+  
 })

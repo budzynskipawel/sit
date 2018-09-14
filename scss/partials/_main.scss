@@ -221,7 +221,7 @@ nav {
 
     
 
-    transition: 1s;
+    transition: 0.5s;
   }
 
 }
@@ -231,13 +231,36 @@ nav {
   background-image: linear-gradient(white,#D0D0D8);
    
   .container {
-    border: 1px solid black;
+    // border: 1px solid black;
    position: relative;
     
 
 
   }
-
+  .circles{
+    position: absolute;
+    bottom: 0.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display:flex;
+    justify-content: space-between;
+    width: 4rem;
+    
+    z-index: 999;
+    div{
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background-color: lightgray;
+      border: 1px solid gray;
+      cursor: pointer!important;
+      transition: 0.5s;
+     
+      &:first-child{
+        background-color: gray;
+      }
+    }
+  }
   [class^="arrow"] {
 
     display: block;
@@ -340,13 +363,13 @@ nav {
     }
 
     height: auto;
-    border:1px solid #666;
+    // border:1px solid #666;
 
     img {
 
       max-width: 100%;
       height: auto;
-      
+      z-index: 1;
     }
   }
 
@@ -369,7 +392,7 @@ nav {
     font-family: 'Raleway',
     Arial,
     sans-serif;
-    border:1px solid #666;
+    // border:1px solid #666;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -433,7 +456,7 @@ nav {
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    margin: 1rem;
+    margin: 1rem 0 1.5rem 0;
     transition: 0.25s;
     &:hover{
       font-size: 1.125rem;
