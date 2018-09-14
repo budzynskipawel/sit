@@ -1,8 +1,8 @@
 body {
-  
+    text-shadow: 1px 1px 1px lightgray;
     min-width: 360px;
     min-height: 360px;
-  
+    color: $my-black;
   
   background-color: red;
 
@@ -28,9 +28,11 @@ a:link {
 .logo {
   color: $logo;
   font-family: 'Raleway-Bold', Arial, sans-serif;
+  
 }
 
 header {
+  text-shadow: none!important;
   position: sticky;
   top: 0;
   background-color: $my-black;
@@ -188,6 +190,7 @@ nav {
     margin-bottom: 5px;
     background: $logo;
     transition: 1s;
+    
   }
 }
 
@@ -246,12 +249,13 @@ nav {
     justify-content: space-between;
     width: 4rem;
     
-    z-index: 999;
+    z-index: 99;
     div{
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
-      background-color: lightgray;
+      background-color: $my-gray;
+      box-shadow: 1px 1px 1px gray;
       border: 1px solid gray;
       cursor: pointer!important;
       transition: 0.5s;
@@ -447,6 +451,7 @@ nav {
            }
 
     z-index: 9;
+    box-shadow: 1px 1px 1px lightgray;
      font-family: 'Raleway', Arial, sans-serif;
     background-color: $logo;
     color: white;
@@ -464,4 +469,111 @@ nav {
     }
     
   }
+}
+
+// chairs
+.second{
+  padding: 2rem 1rem;
+  background-color: white;
+  .container{
+    
+    display: flex;
+    justify-content: space-between;
+    @include phone{
+      justify-content: center;
+    }
+    @include phone-landscape{
+      justify-content: space-between;
+    }
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    &>div{
+      width: 32%;
+      
+      @include phone{
+        width: 100%;
+      }
+
+      @include phone-landscape{
+        width: 48%;
+      }
+      @include tablet{
+        width: 48%
+      }
+      
+      height: auto;
+      position: relative;
+      
+      img{
+        width: 100%;
+        height: auto;
+      }
+      &:nth-child(3){
+        
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        border: 1px solid $my-gray;
+        @include phone{
+          width: 100%;
+          }
+          @include phone-landscape{
+            margin-top: 1.5rem;
+          }
+
+        @include tablet{
+          width: 100%;
+          margin-top: 1.5rem;
+        }
+        h3{
+          
+          margin: 0.5rem 1rem;
+          font-family: 'Raleway-Bold', Arial, sans-serif;
+          
+        }
+        p{
+          
+          font-family: 'Raleway', Arial, sans-serif;
+          font-size: 0.875rem;
+          margin: 0.5rem 1rem;
+          color: gray;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+.inner{
+ width: 100%;
+  margin:1rem 0;
+  min-height: 3rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  h3{
+    margin: 0.5rem 1rem;
+    font-family: 'Raleway-Bold', Arial, sans-serif;
+    color: $my-black;
+    
+    
+    
+    
+    
+  }
+}
+.greenbox{
+  margin:  0.5rem;
+  justify-self: flex-start;
+  width: 60%;
+  height: 0.5rem;
+  background-color: $logo;
+
+}
+
+// pricelist
+#pricelist{
+  min-height: 360px;
+  background-color: $my-lightgray;
 }
