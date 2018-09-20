@@ -1,9 +1,9 @@
 body {
-    text-shadow: 1px 1px 1px lightgray;
-    min-width: 360px;
-    min-height: 360px;
-    color: $my-black;
-  
+  // text-shadow: 1px 1px 1px lightgray;
+  min-width: 360px;
+  min-height: 360px;
+  color: $my-black;
+
   background-color: red;
 
   @include tablet {
@@ -28,18 +28,19 @@ a:link {
 .logo {
   color: $logo;
   font-family: 'Raleway-Bold', Arial, sans-serif;
-  
+
 }
 
 header {
-  text-shadow: none!important;
+  text-shadow: none !important;
   position: sticky;
   top: 0;
   background-color: $my-black;
   color: white;
   font-family: 'Raleway', Arial, sans-serif;
   font-size: 1rem;
-  z-index: 999!important;
+  z-index: 999 !important;
+
   @include phone {
     font-size: 1.5rem;
   }
@@ -59,8 +60,8 @@ nav {
     top: -12rem;
     right: 0;
     transition: 1s;
-   z-index: 99;
-    
+    z-index: 99;
+
   }
 
 }
@@ -71,7 +72,7 @@ nav {
 
   @include phone {
     display: block;
-    
+
   }
 
   padding: 1rem;
@@ -171,9 +172,9 @@ nav {
   display: none;
   position: absolute;
   right: 0;
- 
-    z-index: 999;
-  
+
+  z-index: 999;
+
   @include phone {
     display: block;
   }
@@ -190,7 +191,7 @@ nav {
     margin-bottom: 5px;
     background: $logo;
     transition: 1s;
-    
+
   }
 }
 
@@ -222,7 +223,7 @@ nav {
     top: 3rem !important;
     right: 0 !important;
 
-    
+
 
     transition: 0.5s;
   }
@@ -231,56 +232,61 @@ nav {
 
 .gallery {
 
-  background-image: linear-gradient(white,#D0D0D8);
-   
+  background-image: linear-gradient(white, #D0D0D8);
+
   .container {
     // border: 1px solid black;
-   position: relative;
-    
+    position: relative;
+
 
 
   }
-  .circles{
+
+  .circles {
     position: absolute;
     bottom: 0.25rem;
     left: 50%;
     transform: translateX(-50%);
-    display:flex;
+    display: flex;
     justify-content: space-between;
     width: 4rem;
-    
+
     z-index: 99;
-    div{
+
+    div {
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
       background-color: $my-gray;
       box-shadow: 1px 1px 1px gray;
       border: 1px solid gray;
-      cursor: pointer!important;
+      cursor: pointer !important;
       transition: 0.5s;
-     
-      &:first-child{
+
+      &:first-child {
         background-color: gray;
       }
     }
   }
+
   [class^="arrow"] {
 
     display: block;
     position: absolute;
     top: 50%;
     font-family: 'Raleway-Bo';
-    
-  
+
+
     color: $logo;
     font-size: 2.5rem;
-    @include phone{
+
+    @include phone {
       font-size: 1.5rem;
     }
+
     z-index: 99;
 
-    
+
 
     &:hover {
       cursor: pointer !important;
@@ -310,37 +316,37 @@ nav {
     user-select: none;
     transition: 1.5s;
     max-width: 1024px;
-    
-    top: 0;
-    
-   
-@include desktop{
-  min-height: 360px;
 
-}
-@include large{
-  min-height: 360px;
-  
-}
-    &[class$="1"] {
-      
+    top: 0;
+
+
+    @include desktop {
+      min-height: 360px;
+
     }
 
+    @include large {
+      min-height: 360px;
+
+    }
+
+    &[class$="1"] {}
+
     &[class$="2"] {
-      
-      
+
+
       position: absolute;
-      top:0;
+      top: 0;
       opacity: 0;
-      
+
     }
 
     &[class$="3"] {
-      
+
       position: absolute;
-      top:0;
-       opacity: 0;
-      
+      top: 0;
+      opacity: 0;
+
     }
   }
 
@@ -348,23 +354,22 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:50%;
+    width: 50%;
     margin: 3rem 0 0 0;
-    
-  
+
+
 
     @include phone {
       width: 100%;
       justify-content: center;
-     margin: 0;
+      margin: 0;
     }
 
     @include phone-landscape {
       width: 35%;
     }
-    @include tablet{
-      
-    }
+
+    @include tablet {}
 
     height: auto;
     // border:1px solid #666;
@@ -380,14 +385,14 @@ nav {
   .desc {
     width: 35%;
     // margin: 3rem 0 0 0;
-  
+
 
     @include phone {
       width: 100%;
       margin: 0;
-      
+
     }
-    
+
 
     @include phone-landscape {
       width: 55%;
@@ -405,11 +410,13 @@ nav {
     h1 {
       padding: 1rem 0 1rem 0;
       text-align: center;
+
       @include phone {
         padding: 1rem 0;
         font-size: 1.875rem;
       }
-      @include tablet{
+
+      @include tablet {
         font-size: 1.75rem;
       }
 
@@ -427,32 +434,36 @@ nav {
         padding: 0 2rem;
       }
 
-     
+
       width: 100%;
-     
-      @include tablet{
+
+      @include tablet {
         width: 100%;
         padding: 0 2rem;
       }
+
       text-align: center;
       line-height: 150%;
     }
 
-    
+
   }
-  button{
-    a{
-      display:flex;
+
+  button {
+    a {
+      display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
-      
-           }
+
+    }
 
     z-index: 9;
     box-shadow: 1px 1px 1px lightgray;
-     font-family: 'Raleway', Arial, sans-serif;
+    font-family: 'Raleway',
+    Arial,
+    sans-serif;
     background-color: $logo;
     color: white;
     font-size: 1rem;
@@ -463,80 +474,91 @@ nav {
     cursor: pointer;
     margin: 1rem 0 1.5rem 0;
     transition: 0.25s;
-    &:hover{
+
+    &:hover {
       font-size: 1.125rem;
-      
+
     }
-    
+
   }
 }
 
 // chairs
-.second{
+.second {
   padding: 2rem 1rem;
   background-color: white;
-  .container{
-    
+
+  .container {
+
     display: flex;
     justify-content: space-between;
-    @include phone{
+
+    @include phone {
       justify-content: center;
     }
-    @include phone-landscape{
+
+    @include phone-landscape {
       justify-content: space-between;
     }
+
     align-items: stretch;
     flex-wrap: wrap;
 
-    &>div{
+    &>div {
       width: 32%;
-      
-      @include phone{
+
+      @include phone {
         width: 100%;
       }
 
-      @include phone-landscape{
+      @include phone-landscape {
         width: 48%;
       }
-      @include tablet{
+
+      @include tablet {
         width: 48%
       }
-      
+
       height: auto;
       position: relative;
-      
-      img{
+
+      img {
         width: 100%;
         height: auto;
       }
-      &:nth-child(3){
-        
+
+      &:nth-child(3) {
+        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         align-content: center;
         border: 1px solid $my-gray;
-        @include phone{
-          width: 100%;
-          }
-          @include phone-landscape{
-            margin-top: 1.5rem;
-          }
 
-        @include tablet{
+        @include phone {
+          width: 100%;
+        }
+
+        @include phone-landscape {
+          margin-top: 1.5rem;
+        }
+
+        @include tablet {
           width: 100%;
           margin-top: 1.5rem;
         }
-        h3{
-          
-          margin: 0.5rem 1rem;
+
+        h3 {
+          width: 100%;
+          margin: 0.5rem 0;
           font-family: 'Raleway-Bold', Arial, sans-serif;
-          
+
         }
-        p{
-          
+
+        p {
+
           font-family: 'Raleway', Arial, sans-serif;
           font-size: 0.875rem;
-          margin: 0.5rem 1rem;
+          margin: 0.5rem 0;
           color: gray;
           text-shadow: none;
         }
@@ -545,26 +567,29 @@ nav {
   }
 }
 
-.inner{
- width: 100%;
-  margin:1rem 0;
+.inner {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0 1rem;
   min-height: 3rem;
   background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
   bottom: 0;
-  h3{
-    margin: 0.5rem 1rem;
+
+  h3 {
+    margin-top: 0.5rem;
     font-family: 'Raleway-Bold', Arial, sans-serif;
     color: $my-black;
-    
-    
-    
-    
-    
+
+
+
+
+
   }
 }
-.greenbox{
-  margin:  0.5rem;
+
+.greenbox {
+  margin-bottom: 1rem;
   justify-self: flex-start;
   width: 60%;
   height: 0.5rem;
@@ -573,7 +598,183 @@ nav {
 }
 
 // pricelist
-#pricelist{
+#pricelist {
   min-height: 360px;
   background-color: $my-lightgray;
+  padding: 2rem 1rem;
+
+  .greenbox {
+    width: 32%;
+  }
+
+  font-family: 'Raleway',
+  Arial,
+  sans-serif;
+
+  h3 {
+    font-family: 'Raleway-Bold', Arial, sans-serif;
+  }
+
+  .circle {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background-color: lightgray;
+    border-radius: 50%;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -70%);
+
+    div {
+      position: absolute;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    div:first-child {
+
+      width: 56px;
+      height: 56px;
+      background-color: white;
+
+    }
+
+    div:nth-child(2) {
+
+      width: 30px;
+      height: 30px;
+      background-color: lightgray;
+
+
+
+    }
+
+
+
+  }
+
+  .container {
+    .options {
+      
+      display: flex;
+      justify-content: space-between;
+      margin: 3.5rem 0 0 0;
+
+      @include phone {
+        justify-content: center;
+      }
+
+      @include phone-landscape {
+        justify-content: space-between;
+      }
+
+      // align-content: stretch;
+      flex-wrap: wrap;
+
+      &>div {
+        background-color: white;
+        width: 32%;
+        border: 1px solid lightgray;
+        position: relative;
+        min-height: 360px;
+
+        @include phone {
+          width: 100%;
+          margin: 1.5rem 0;
+        }
+
+        @include phone-landscape {
+          width: 32%;
+          margin: 0;
+        }
+
+        // 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+          width: 100%;
+          text-align: center;
+          color: $logo;
+          @include phone-landscape{
+            font-size: 0.875rem;
+                        }
+        }
+
+        .price {
+          width: 7rem;
+          height: 7rem;
+          border-radius: 50%;
+          border: 1px solid lightgray;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          align-content: center;
+          margin: 1.5rem 0;
+          padding: 0;
+
+          h1,
+          h4 {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: $my-darkgray;
+          }
+
+          h1 {
+            font-family: 'Raleway-Bold', Arial, sans-serif;
+            font-size: 2rem;
+            
+          }
+        }
+
+        ul {
+          border: 2px solid red;
+          width: 100%;
+          min-height: 8rem;
+          list-style-type: none;
+          text-align: center;
+
+          li {
+            height: 2rem;
+            font-size: 1.375rem;
+            line-height: 2rem;
+            @include tablet {
+              font-size: 1rem;
+            }
+
+            @include phone-landscape {
+              font-size: 1rem;
+            }
+
+            color: $my-darkgray;
+
+            &:nth-of-type(2n+1) {
+              background-color: $my-gray;
+            }
+
+            &:nth-of-type(2n) {}
+          }
+        }
+
+        h2 {
+          margin-top: 1.5rem;
+        }
+
+
+        button {
+          margin: 1rem;
+        }
+
+
+
+      }
+    }
+
+  }
 }
