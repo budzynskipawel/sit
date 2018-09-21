@@ -16,7 +16,10 @@ body {
 }
 
 a:link {
-  text-decoration: none;
+  text-decoration: none!important;
+  color: inherit;
+}
+a:visited{
   color: inherit;
 }
 
@@ -270,7 +273,8 @@ nav {
   }
 
   [class^="arrow"] {
-
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275)0.5s;
+   
     display: block;
     position: absolute;
     top: 50%;
@@ -290,6 +294,7 @@ nav {
 
     &:hover {
       cursor: pointer !important;
+      opacity: 0.5;
     }
 
     &[class$=left] {
@@ -624,6 +629,7 @@ nav {
     left: 50%;
     top: 0;
     transform: translate(-50%, -70%);
+    transition: cubic-bezier(0.23, 1, 0.320, 1) 1s;
 
     div {
       position: absolute;
@@ -657,10 +663,11 @@ nav {
 
   .container {
     .options {
-      
+
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      margin: 3.5rem 0 0 0;
+      margin: 4.5rem 0 0 0;
 
       @include phone {
         justify-content: center;
@@ -670,10 +677,58 @@ nav {
         justify-content: space-between;
       }
 
-      // align-content: stretch;
-      flex-wrap: wrap;
+      align-items: stretch;
+
+      // flex-wrap: wrap;
 
       &>div {
+        &:hover {
+          transform: scale(1.05);
+          background-color: $logo;
+
+          .circle {
+            background-color: $logo;
+
+            div:first-child {
+              background-color: $logo;
+            }
+
+            div:nth-child(2) {
+              background-color: white;
+            }
+          }
+
+          h2 {
+            color: white;
+          }
+
+          .price {
+            background-color: white;
+            border-color: white;
+
+            h1,
+            h4 {
+              color: $logo;
+            }
+
+          }
+
+          button {
+            background-color: white;
+            color: $logo;
+          }
+
+          ul {
+
+            li {
+              color: gray;
+
+            }
+          }
+
+        }
+
+        transition: cubic-bezier(0.23, 1, 0.320, 1) 1s;
         background-color: white;
         width: 32%;
         border: 1px solid lightgray;
@@ -682,7 +737,7 @@ nav {
 
         @include phone {
           width: 100%;
-          margin: 1.5rem 0;
+          margin: 2rem 0;
         }
 
         @include phone-landscape {
@@ -700,9 +755,10 @@ nav {
           width: 100%;
           text-align: center;
           color: $logo;
-          @include phone-landscape{
+
+          @include phone-landscape {
             font-size: 0.875rem;
-                        }
+          }
         }
 
         .price {
@@ -714,8 +770,10 @@ nav {
           justify-content: center;
           flex-wrap: wrap;
           align-content: center;
+          align-self: flex-start;
           margin: 1.5rem 0;
           padding: 0;
+          transition: cubic-bezier(0.23, 1, 0.320, 1) 1s;
 
           h1,
           h4 {
@@ -729,21 +787,24 @@ nav {
           h1 {
             font-family: 'Raleway-Bold', Arial, sans-serif;
             font-size: 2rem;
-            
+
           }
         }
 
         ul {
-          border: 2px solid red;
-          width: 100%;
+          transition: cubic-bezier(0.23, 1, 0.320, 1) 1s;
+          width: 95%;
           min-height: 8rem;
           list-style-type: none;
           text-align: center;
 
           li {
-            height: 2rem;
+            width: 100%;
+            min-height: 2rem;
             font-size: 1.375rem;
             line-height: 2rem;
+            transition: cubic-bezier(0.23, 1, 0.320, 1) 1s;
+
             @include tablet {
               font-size: 1rem;
             }
@@ -758,23 +819,45 @@ nav {
               background-color: $my-gray;
             }
 
-            &:nth-of-type(2n) {}
+            &:nth-of-type(2n) {
+              background-color: $my-lightgray;
+            }
           }
         }
 
         h2 {
           margin-top: 1.5rem;
+          align-self: flex-start;
         }
 
 
         button {
           margin: 1rem;
+          transition: cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+          align-self: flex-end;
+          width: 100px;
+          border: none;
+          height: 30px;
+          border-radius: 8px;
+          background-color: $logo;
+          color: white;
+          font-family: 'Raleway', Arial, sans-serif;
+          font-size: 1rem;
+          outline: none;
+          cursor: pointer;
+          &:hover{
+            transform: scale(1.1);
+          }
+          
         }
 
-
+        
 
       }
-    }
 
+
+
+
+    }
   }
 }
