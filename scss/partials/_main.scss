@@ -16,10 +16,11 @@ body {
 }
 
 a:link {
-  text-decoration: none!important;
+  text-decoration: none !important;
   color: inherit;
 }
-a:visited{
+
+a:visited {
   color: inherit;
 }
 
@@ -274,7 +275,7 @@ nav {
 
   [class^="arrow"] {
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275)0.5s;
-   
+
     display: block;
     position: absolute;
     top: 50%;
@@ -605,7 +606,7 @@ nav {
 // pricelist
 #pricelist {
   min-height: 360px;
-  background-color: $my-lightgray;
+  background-color: $my-gray;
   padding: 2rem 1rem;
 
   .greenbox {
@@ -845,13 +846,14 @@ nav {
           font-size: 1rem;
           outline: none;
           cursor: pointer;
-          &:hover{
+
+          &:hover {
             transform: scale(1.1);
           }
-          
+
         }
 
-        
+
 
       }
 
@@ -860,4 +862,165 @@ nav {
 
     }
   }
+}
+
+.contact {
+  min-height: 360px;
+  background-color: white;
+  padding: 2rem 1rem;
+
+  .greenbox {
+    width: 32%;
+  }
+
+  font-family: 'Raleway',
+  Arial,
+  sans-serif;
+
+  h3 {
+    font-family: 'Raleway-Bold', Arial, sans-serif;
+  }
+
+  form {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+
+  .form-left {
+
+    width: 60%;
+
+    input,
+    textarea {
+      border: 1px solid $logo;
+      resize: none;
+      overflow: hidden;
+      padding: 0.5rem;
+      width: 100%;
+      font-family: 'Raleway-Light', Arial, sans-serif;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: $my-black;
+
+      &::placeholder {
+
+        color: $my-darkgray;
+      }
+
+
+
+
+    }
+  }
+
+  .form-right {
+
+    width: 35%;
+
+    img {
+      width: 100%;
+    }
+
+    input[type="checkbox"] {
+      width: 2rem;
+      height: 2rem;
+      float: left;
+      margin-right: 0.5rem;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 2rem;
+        height: 2rem;
+
+        border: 1px solid $logo;
+        background-color: white;
+      }
+
+      &+label {
+        display: block;
+
+        margin: 0 0 1rem 0;
+        color: $my-darkgray;
+      }
+    }
+
+    #check:checked {
+      &::after {
+        background-image: url(../images/form_ok.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    input[type="submit"] {
+      background-color: $logo;
+      cursor: pointer;
+      color: white;
+      border: none;
+      width: 100%;
+      height: 3rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      font-family: 'Raleway-Bold', Arial, sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  .form-left,
+  .form-right {
+    @include phone {
+      width: 100%;
+
+    }
+  }
+}
+
+footer {
+  background-color:white;
+ 
+  font-family: 'Raleway', Arial, sans-serif;
+  color: $my-darkgray;
+  .container, .left, .right {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .left{
+  width: 60%;
+  padding: 1rem 0;
+  
+  
+  }
+
+  .right{
+    width: 40%;
+    justify-content: space-between;
+
+    img{
+      margin: 0.25rem;
+      transition: 0.5s;
+      &:hover{
+        transform: scale(1.25);
+      }
+    }
+
+    span{
+      font-family: 'Raleway-Bold', Arial, sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  .left,  .right{
+    align-items: center;
+    @include phone{
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+
 }
