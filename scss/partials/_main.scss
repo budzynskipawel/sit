@@ -935,7 +935,7 @@ nav {
         content: "";
         width: 2rem;
         height: 2rem;
-
+        cursor: pointer;
         border: 1px solid $logo;
         background-color: white;
       }
@@ -1024,3 +1024,55 @@ footer {
   }
 
 }
+
+// test start
+
+.application{
+  background-color: $my-lightgray;
+  padding: 1rem;
+  font-family: 'Raleway', Arial, sans-serif;
+  
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    
+
+  }
+  
+}
+
+.form-third{
+  width: 33%;
+  border: 1px solid red;
+  @include phone{
+    width: 100%;
+  }
+
+  &:nth-of-type(2){
+    
+    background-image: url('/images/red_chair.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 337px;
+    
+    
+  }
+  h3{
+    font-family: 'Raleway-Bold', Arial, sans-serif;
+    font-weight: bold;
+    padding-top: 0.5rem;
+    &.alr{
+      text-align: right;
+    }
+  }
+  .greenbox{
+    width: 100%;
+    @include phone{
+      width: 32%;
+    }
+  }
+  
+}
+
+
