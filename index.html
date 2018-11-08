@@ -53,7 +53,7 @@
                         corrupti fugiat ea possimus hic tempora, quae, accusamus delectus amet?
 
                     </p>
-                    <button> <a href="#or">ZOBACZ ORANGE</a></button>
+                    <button class="green_button"> <a href="#or">ZOBACZ ORANGE</a></button>
                 </div>
 
             </div>
@@ -64,7 +64,7 @@
                     <p>Lorem black dolor sit amet consectetur adipisicing elit. Dolores vero placeat illum, odit
                         corrupti fugiat ea possimus hic tempora, quae, accusamus delectus amet?
 
-                    </p> <button>
+                    </p> <button class="green_button">
                         <a href="#bl">ZOBACZ BLACK</a>
                     </button>
                 </div>
@@ -77,7 +77,7 @@
                         corrupti fugiat ea possimus hic tempora, quae, accusamus delectus amet?
 
 
-                    </p> <button>
+                    </p> <button class="green_button">
                         <a href="#red">ZOBACZ RED</a>
                     </button>
                 </div>
@@ -215,8 +215,10 @@
                     </ul>
                 </div>
                 <div class="checkbox check-box">
-                    <input type="checkbox" id="transport" data-transport-price="200">
-                    <label for="transport">Transport</label>
+                    <label class="check">
+
+                        <input type="checkbox"> <div class="pseudobox"></div>  <div class = "desc"><h4>Transport</h4></div>
+                    </label>
                 </div>
             </div>
             <div class="form-third">
@@ -228,21 +230,21 @@
 
                 <div class="summary_panel">
                     <div class="panel_left">
-                        <h4 class="title">Twój fotel</h4>
+                        <h3 class="title">Twój fotel</h3>
                         <span class="color"></span>
                         <span class="pattern"></span>
                         <span class="transport"></span>
                     </div>
                     <div class="panel_right">
-                        <h4 class="title value"></h4>
+                        <h3 class="title value"></h3>
                         <span class="color value"></span>
                         <span class="pattern value"></span>
                         <span class="transport value"></span>
                     </div>
                     <div class="sum_label">SUMA</div>
-                    <div class="sum"><strong></strong></div>
+                    <div class="sum"><strong>0</strong></div>
                 </div>
-                <a href="" class="green_button">Zamawiam</a>
+                <button class="green_button">Zamawiam</button>
             </div>
 
             <!--<div class="checkbox"></div>-->
@@ -266,7 +268,10 @@
                     <textarea placeholder="Wiadomość" name="" id="" cols="30" rows="6"></textarea></div>
                 <div class="form-right">
                     <img src="images/orange_chair.png" alt="Orange Chair">
-                    <input type="checkbox" id="check"><label for="check">Zgadzam się na przetwarzanie danych osobowych</label>
+                    <label class="check">
+
+                        <input type="checkbox"> <div class="pseudobox"></div>  <div class = "desc">Zgadzam się na przetwarzanie danych osobowych</div>
+                    </label>
                     <input type="submit" value="WYŚLIJ" disabled>
                 </div>
             </form>
@@ -287,6 +292,11 @@
             </div>
         </div>
     </footer>
+
+    <div class="test">
+
+        
+    </div>
     <script type="text/javascript" src="js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
