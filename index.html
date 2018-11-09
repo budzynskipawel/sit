@@ -191,37 +191,37 @@
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz rodzaj</span>
                     <span class="list_arrow"></span>
-                    <ul class="list_panel">
-                        <li>Clair</li>
-                        <li>Margarita</li>
-                        <li>Selena</li>
+                    <ul class="list_panel models">
+                        <li data-model="Clair" data-price="200">Clair</li>
+                        <li data-model="Margarita" data-price="230">Margarita</li>
+                        <li data-model="Selena" data-price="270">Selena</li>
                     </ul>
                 </div>
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz kolor</span>
                     <span class="list_arrow"></span>
-                    <ul class="list_panel">
-                        <li>Czerwony</li>
-                        <li>Czarny</li>
-                        <li>Pomarańczowy</li>
+                    <ul class="list_panel colors">
+                        <li data-color="czerwony" data-price="50" data-img="red_chair.png">Czerwony</li>
+                        <li data-color="czarny" data-price="30" data-img="black_chair.png">Czarny</li>
+                        <li data-color="pomarańczowy" data-price="45" data-img="orange_chair.png">Pomarańczowy</li>
                     </ul>
                 </div>
                 <div class="drop_down_list">
                     <span class="list_label">Wybierz materiał</span>
                     <span class="list_arrow"></span>
-                    <ul class="list_panel">
-                        <li>Tkanina</li>
-                        <li>Skóra</li>
+                    <ul class="list_panel materials">
+                        <li data-material="tkanina" data-price="100">Tkanina</li>
+                        <li data-material="skóra" data-price = "180">Skóra</li>
                     </ul>
                 </div>
                 <div class="checkbox check-box">
                     <label class="check">
 
-                        <input type="checkbox"> <div class="pseudobox"></div>  <div class = "desc"><h4>Transport</h4></div>
+                        <input type="checkbox" id = "transport" data-price="30" data-name="transport"> <div class="pseudobox"></div>  <div class = "desc"><h4>Transport</h4></div>
                     </label>
                 </div>
             </div>
-            <div class="form-third">
+            <div class="form-third changePhoto">
 
             </div>
             <div class="form-third">
@@ -236,7 +236,7 @@
                         <span class="transport"></span>
                     </div>
                     <div class="panel_right">
-                        <h3 class="title value"></h3>
+                        <h3 class="title value">0</h3>
                         <span class="color value"></span>
                         <span class="pattern value"></span>
                         <span class="transport value"></span>

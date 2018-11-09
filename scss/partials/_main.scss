@@ -1117,11 +1117,14 @@ footer {
       padding: 0.5rem;
 
     }
-
+/*
     &:hover ul {
       display: block;
     }
-
+*/
+.rot{
+  transform: rotate(180deg);
+}
     .list_arrow {
       width: 0;
       height: 0;
@@ -1133,6 +1136,7 @@ footer {
       right: 14px;
       top: 1rem;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     ul {
@@ -1145,9 +1149,15 @@ footer {
         border-bottom: 1px solid $my-lightgray;
         padding: 0.5rem;
         cursor: pointer;
+        transition: 0.3s;
 
         &:last-of-type {
           border-bottom: none;
+        }
+
+        &:hover{
+          background-color: $logo;
+          color: white;
         }
       }
     }
